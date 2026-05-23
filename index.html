@@ -406,6 +406,19 @@ main{position:relative;z-index:1}
   *{animation:none!important;transition-duration:.01ms!important}
   .rev,.card,.marca{opacity:1;transform:none}
 }
+/* ── performance mobile ── */
+.refletor,.malha{will-change:transform}
+@media(max-width:760px){
+  body{text-rendering:auto}
+  .malha{display:none}
+  .refletor{background:radial-gradient(600px 300px at 50% 0%,rgba(216,184,106,.09),transparent 55%)}
+  .card{backdrop-filter:none}
+  .seta-foto{backdrop-filter:none;background:rgba(10,13,11,.85)}
+  .modal-fundo{backdrop-filter:none;background:rgba(0,0,0,.9)}
+  .abre::before,.estrelas i,.bolinha,.hex-central::before{animation:none!important}
+  .zap{animation:none!important;box-shadow:0 0 0 3px rgba(43,217,107,.35)}
+  .descer .seta{animation:none!important;opacity:.7}
+}
 </style>
 </head>
 <body>
