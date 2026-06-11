@@ -291,9 +291,9 @@ main{position:relative;z-index:1}
              inset 0 8px 12px rgba(255,255,255,.3);
   animation:flutua 6s ease-in-out infinite}
 .bolinha.b1{top:14%;left:10%;background:radial-gradient(circle at 30% 30%,#5cd182,#1a9f4b);animation-delay:0s}
-.bolinha.b2{top:60%;left:18%;background:radial-gradient(circle at 30% 30%,#ffe66b,#e6b800);animation-delay:.6s;width:46px;height:46px}
-.bolinha.b3{top:20%;right:14%;background:radial-gradient(circle at 30% 30%,#82a4ff,#1a4dbf);animation-delay:1.2s;width:48px;height:48px}
-.bolinha.b4{top:64%;right:8%;background:radial-gradient(circle at 30% 30%,#ff8fd0,#d6248a);animation-delay:1.8s;width:42px;height:42px}
+.bolinha.b2{top:60%;left:18%;background:radial-gradient(circle at 30% 30%,#ffe9b0,#d8b86a);animation-delay:.6s;width:46px;height:46px}
+.bolinha.b3{top:20%;right:14%;background:radial-gradient(circle at 30% 30%,#4a8f63,#1d4a2e);animation-delay:1.2s;width:48px;height:48px}
+.bolinha.b4{top:64%;right:8%;background:radial-gradient(circle at 30% 30%,#f5ead0,#cbb98a);animation-delay:1.8s;width:42px;height:42px}
 .bolinha.b5{top:42%;left:50%;transform:translateX(-50%);
   background:radial-gradient(circle at 30% 30%,#fff,#bbb);animation-delay:2.4s;width:38px;height:38px}
 @keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
@@ -406,7 +406,8 @@ main{position:relative;z-index:1}
   .col{padding:0 16px}
   /* hero compact */
   .abre{padding:34px 0 28px}
-  .bolinha{width:38px;height:38px}
+  .bolinha{display:none}
+  .atelie-visual{min-height:160px}
   .hex-central{width:100px;height:100px}
   .hex-central svg{width:38px;height:38px}
   /* sticky pills */
@@ -416,6 +417,10 @@ main{position:relative;z-index:1}
     overflow-x:auto;flex-wrap:nowrap;
     -webkit-overflow-scrolling:touch;scrollbar-width:none;gap:8px}
   .abas::-webkit-scrollbar{display:none}
+  .abas{justify-content:flex-start}
+  .qualidade .qi:last-child{grid-column:1/-1}
+  .stats .stat:last-child{grid-column:1/-1}
+  .abre + .faixa{display:none}
   .aba{white-space:nowrap;flex-shrink:0;font-size:.78rem;padding:7px 14px}
   /* 2-col grid */
   .secao{padding:28px 0}
@@ -432,7 +437,7 @@ main{position:relative;z-index:1}
   .preco .v{font-size:1.5rem}
   .preco .cifra{font-size:.85rem}
   .preco .cb{display:none}
-  .botao{font-size:.8rem;padding:11px 8px;letter-spacing:.03em}
+  .botao{font-size:.8rem;padding:13px 8px;letter-spacing:.03em}
   .botao .ico-premium{width:16px;height:16px}
   .tons{right:7px;bottom:7px}
   .tons button{width:22px;height:22px;border-radius:5px}
@@ -644,6 +649,9 @@ main{position:relative;z-index:1}
   border-radius:18px;background:linear-gradient(180deg,rgba(216,184,106,.07),rgba(255,255,255,.012));
   transition:border-color .3s,transform .3s}
 .kit:hover{border-color:rgba(216,184,106,.5);transform:translateY(-3px)}
+.kit{position:relative;padding-right:46px}
+.kit::after{content:"\2192";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:1.25rem;color:var(--ouro);opacity:.7}
 .kit b{font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.02em;
   text-transform:uppercase;color:var(--ouro-luz);font-weight:400}
 .kit .itens{font-size:.87rem;color:var(--giz-2);font-weight:600}
@@ -654,7 +662,7 @@ main{position:relative;z-index:1}
 @media(max-width:760px){
   .kits{margin-top:32px}
   .kits-grid{grid-template-columns:1fr;gap:10px}
-  .kit{padding:16px 18px}
+  .kit{padding:16px 44px 16px 18px}
 }</style>
 </head>
 <body>
@@ -696,7 +704,7 @@ main{position:relative;z-index:1}
       <div class="cab rev">
         <div class="et">A coleção · edição limitada</div>
         <h2>Escolha sua <b>peça</b></h2>
-        <p>Use as setas pra passar as fotos, escolha a quantidade e finalize o pedido.</p>
+        <p>Toque na peça pra ver os detalhes e fazer o pedido.</p>
       </div>
       <div class="qualidade rev">
         <div class="qi"><span class="qic"><svg viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg></span><div><b>PLA premium</b><small>material resistente</small></div></div>
@@ -766,7 +774,7 @@ main{position:relative;z-index:1}
             <div class="it"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4z"/><path d="m7.5 10.5 2 2"/><path d="m11 7 2 2"/><path d="m14.5 3.5 2 2"/></svg></div>Tamanho e detalhes sob medida</div>
             <div class="it"><div class="ic"><svg viewBox="0 0 24 24"><path d="m12 3 2 5.5L19.5 10 14 12l-2 5.5L10 12 4.5 10 10 8.5 12 3z"/></svg></div>Modelo novo? A gente desenha junto</div>
           </div>
-          <div class="nota-final">É só me chamar no <b>WhatsApp</b> e contar sua ideia — o resto a gente resolve junto.</div>
+          <div class="nota-final">É só me chamar no <a id="zapAtelie" target="_blank" rel="noopener"><b>WhatsApp</b></a> e contar sua ideia — o resto a gente resolve junto.</div>
         </div>
       </div>
     </div>
@@ -1190,7 +1198,7 @@ function abreModal(idx){
   modalFundo.classList.add("aberto");
   document.body.style.overflow="hidden";
   haptic();
-  setTimeout(()=>modalConfirma.focus(),120);
+  setTimeout(()=>{modalConfirma.focus({preventScroll:true});const mEl=document.querySelector(".modal");if(mEl)mEl.scrollTop=0;},120);
 }
 function fechaModal(){
   modalFundo.classList.remove("aberto");
@@ -1312,6 +1320,8 @@ document.querySelectorAll(".rev").forEach(el=>obs.observe(el));
 // rodapé
 const zapR=document.getElementById("zapRodape");
 if(zapR)zapR.href=wa("Olá! Vim pelo catálogo da HexaDrop e quero saber mais sobre uma peça.");
+const zapA=document.getElementById("zapAtelie");
+if(zapA)zapA.href=wa("Olá! Quero uma peça personalizada — posso te contar a ideia?");
 const anoEl=document.getElementById("ano");
 if(anoEl)anoEl.textContent=new Date().getFullYear();
 const btnTopo=document.querySelector(".rodape .topo");
@@ -1326,7 +1336,7 @@ if(tbMarca)tbMarca.addEventListener("click",e=>{e.preventDefault();window.scroll
 let tbOn=false;
 window.addEventListener("scroll",()=>{
   const s=window.scrollY>560;
-  if(s!==tbOn){tbOn=s;topbar.classList.toggle("on",s);}
+  if(s!==tbOn){tbOn=s;topbar.classList.toggle("on",s);const fab=document.getElementById("waf");if(fab)fab.style.display=s?"none":"";}
 },{passive:true});
 
 // lightbox (foto ampliada)
